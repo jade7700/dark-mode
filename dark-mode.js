@@ -6,24 +6,16 @@ if(localConfig == null){
 	if(configUser.matches == true){
 		document.body.classList.add('dark-mode');
 		document.getElementById("bt_dark").classList.add("light_im");
-		document.getElementById("bt_dark").classList.remove("dark_im");
-		document.body.classList.remove('light-theme');
 	}else{
-		document.body.classList.remove('dark-mode');
 		document.getElementById("bt_dark").classList.add("dark_im");
-		document.getElementById("bt_dark").classList.remove("light_im");
 		document.body.classList.add('light-theme');
 	}
 }else{
 	if (localConfig == 'dark') {
 		document.body.classList.add('dark-mode');
 		document.getElementById("bt_dark").classList.add("light_im");
-		document.getElementById("bt_dark").classList.remove("dark_im");
-		document.body.classList.remove('light-theme');
 	} else if (localConfig == 'light') {
-		document.body.classList.remove('dark-mode');
 		document.getElementById("bt_dark").classList.add("dark_im");
-		document.getElementById("bt_dark").classList.remove("light_im");
 		document.body.classList.add('light-theme');
 	}
 }
@@ -34,18 +26,17 @@ boton_dark.addEventListener('click', () => {
 	if(document.body.classList.contains('light-theme')){
 		colorTema = 'dark';
 		document.body.classList.remove('light-theme');
-		document.getElementById("bt_dark").classList.add("light_im");
-		document.getElementById("bt_dark").classList.remove("dark_im");
 		document.body.classList.add('dark-mode');
+		document.getElementById("bt_dark").classList.remove("dark_im");
+		document.getElementById("bt_dark").classList.add("light_im");	
 	}else{
 		colorTema = 'light';
 		document.body.classList.remove('dark-mode');
-		document.getElementById("bt_dark").classList.add("dark_im");
-		document.getElementById("bt_dark").classList.remove("light_im");
 		document.body.classList.add('light-theme');
+		document.getElementById("bt_dark").classList.remove("light_im");
+		document.getElementById("bt_dark").classList.add("dark_im");	
 	}
 		
     localStorage.setItem('tema', colorTema);
 	
 })
-
